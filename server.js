@@ -46,14 +46,9 @@ app.get("/download/:id",(req,res)=>{
             if(file.split("-")[0]==req.params.id){
                 var path=__dirname+ "/files/";
                 var newName=file.split("-")[1];
-                fs.rename(path+file,path+newName,()=>{
-                    
-                });
-                res.download(__dirname+"/files/"+newName);
-                fs.rename(path+newName,path+file,()=>{
-                    res.send("Successfully downloading")
+                res.download(__dirname+"/files/"+file,newName);
 
-                });
+
             }
         });
         
