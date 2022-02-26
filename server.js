@@ -94,7 +94,7 @@ app.post("/upload",upload.single('file'),(req,res)=>{
 
 
 //listen
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
  console.log("Server is Working...")
 })
 
